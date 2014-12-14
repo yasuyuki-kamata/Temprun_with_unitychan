@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
 		    (isJump == true && isHigh == true) ||
 		    (isSlide == true && isLow == true))
 		{
-			GetComponent<Animator>().SetBool ("DEAD", true);
+			GetComponent<Animator>().SetBool ("DAMAGED", true);
 			speed = 0;
 		}
 	}

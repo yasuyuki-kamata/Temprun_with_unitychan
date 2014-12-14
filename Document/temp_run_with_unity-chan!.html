@@ -559,10 +559,10 @@ pre > code {
 <ul>
 <li> Any StateからMake TransitionでDamage01への矢印を作成します。<br/>
 <img src="074.png" alt="image"/><br/></li>
-<li> Parametersに「＋」を選択し、Triggerを選択。条件名はDEADとします。<br/>
+<li> Parametersに「＋」を選択し、Triggerを選択。条件名はDAMAGEDとします。<br/>
 <img src="075.png" alt="image"/><br/>
 <img src="076.png" alt="image"/><br/></li>
-<li> Any StateからDmaage01への矢印を選択し、conditionの設定を「DEAD」とします。<br/>
+<li> Any StateからDmaage01への矢印を選択し、conditionの設定を「DAMAGED」とします。<br/>
 <img src="077.png" alt="image"/><br/>
 <img src="078.png" alt="image"/><br/>
 <img src="079.png" alt="image"/><br/>
@@ -861,7 +861,7 @@ void OnTriggerEnter (Collider colider)
 </code></pre>
 
 <pre><code>// (5)
-GetComponent&lt;Animator&gt;().SetTrigger (&quot;DEAD&quot;);
+GetComponent&lt;Animator&gt;().SetTrigger (&quot;DAMAGED&quot;);
 speed = 0;
 </code></pre>
 
@@ -899,7 +899,7 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter (Collider colider)
     {
         // (5)
-        GetComponent&lt;Animator&gt;().SetTrigger (&quot;DEAD&quot;);
+        GetComponent&lt;Animator&gt;().SetTrigger (&quot;DAMAGED&quot;);
         speed = 0;
     }
 }
@@ -947,7 +947,7 @@ bool isRun = stateInfo.IsName(&quot;Base Layer.RUN00_F&quot;);
 <pre><code>// (7)
 if( isRun == true )
 {
-    GetComponent&lt;Animator&gt;().SetTrigger (&quot;DEAD&quot;);
+    GetComponent&lt;Animator&gt;().SetTrigger (&quot;DAMAGED&quot;);
     speed = 0;
 }
 
@@ -993,7 +993,7 @@ public class Player : MonoBehaviour {
         // (7)
         if( isRun == true )
         {
-            GetComponent&lt;Animator&gt;().SetTrigger (&quot;DEAD&quot;);
+            GetComponent&lt;Animator&gt;().SetTrigger (&quot;DAMAGED&quot;);
             speed = 0;
         }
     }
@@ -1068,7 +1068,7 @@ bool isSlide = stateInfo.IsName(&quot;Base Layer.SLIDE00&quot;);
 if (isRun == true || 
     (isJump == true &amp;&amp; isHigh == true))
 {
-    GetComponent&lt;Animator&gt;().SetBool (&quot;DEAD&quot;, true);
+    GetComponent&lt;Animator&gt;().SetBool (&quot;DAMAGED&quot;, true);
     speed = 0;
 }
 </code></pre>
@@ -1081,7 +1081,7 @@ if( (isRun == true) ||
     (isJump == true &amp;&amp; isHigh == true) ||
     (isSlide == true &amp;&amp; isLow == true))
 {
-    GetComponent&lt;Animator&gt;().SetBool (&quot;DEAD&quot;, true);
+    GetComponent&lt;Animator&gt;().SetBool (&quot;DAMAGED&quot;, true);
     speed = 0;
 }
 </code></pre>
@@ -1134,7 +1134,7 @@ public class Player : MonoBehaviour {
            (isJump == true &amp;&amp; isHigh == true) ||
            (isSlide == true &amp;&amp; isLow == true))
         {
-            GetComponent&lt;Animator&gt;().SetBool (&quot;DEAD&quot;, true);
+            GetComponent&lt;Animator&gt;().SetBool (&quot;DAMAGED&quot;, true);
             speed = 0;
         }
     }
