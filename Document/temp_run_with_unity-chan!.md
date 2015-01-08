@@ -326,10 +326,10 @@ Any Stateは、条件が揃えばどこからでも移動出来る状態です�
 
 *  Any StateからMake TransitionでDamage01への矢印を作成します。  
 ![image](074.png)  
-*  Parametersに「＋」を選択し、Triggerを選択。条件名はDEADとします。  
+*  Parametersに「＋」を選択し、Triggerを選択。条件名はDAMAGEDとします。  
 ![image](075.png)   
 ![image](076.png)  
-*  Any StateからDmaage01への矢印を選択し、conditionの設定を「DEAD」とします。  
+*  Any StateからDmaage01への矢印を選択し、conditionの設定を「DAMAGED」とします。  
 ![image](077.png)  
 ![image](078.png)  
 ![image](079.png)  
@@ -621,7 +621,7 @@ void OnTriggerEnter (Collider colider)
 
 ```
 // (5)
-GetComponent<Animator>().SetTrigger ("DEAD");
+GetComponent<Animator>().SetTrigger ("DAMAGED");
 speed = 0;
 ```
 
@@ -660,7 +660,7 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter (Collider colider)
 	{
 		// (5)
-		GetComponent<Animator>().SetTrigger ("DEAD");
+		GetComponent<Animator>().SetTrigger ("DAMAGED");
 		speed = 0;
 	}
 }
@@ -707,7 +707,7 @@ bool isRun = stateInfo.IsName("Base Layer.RUN00_F");
 // (7)
 if( isRun == true )
 {
-	GetComponent<Animator>().SetTrigger ("DEAD");
+	GetComponent<Animator>().SetTrigger ("DAMAGED");
 	speed = 0;
 }
 
@@ -754,7 +754,7 @@ public class Player : MonoBehaviour {
 		// (7)
 		if( isRun == true )
 		{
-			GetComponent<Animator>().SetTrigger ("DEAD");
+			GetComponent<Animator>().SetTrigger ("DAMAGED");
 			speed = 0;
 		}
 	}
@@ -826,7 +826,7 @@ bool isSlide = stateInfo.IsName("Base Layer.SLIDE00");
 if (isRun == true || 
 	(isJump == true && isHigh == true))
 {
-	GetComponent<Animator>().SetBool ("DEAD", true);
+	GetComponent<Animator>().SetBool ("DAMAGED", true);
 	speed = 0;
 }
 ```
@@ -840,7 +840,7 @@ if( (isRun == true) ||
     (isJump == true && isHigh == true) ||
     (isSlide == true && isLow == true))
 {
-	GetComponent<Animator>().SetBool ("DEAD", true);
+	GetComponent<Animator>().SetBool ("DAMAGED", true);
 	speed = 0;
 }
 ```
@@ -894,7 +894,7 @@ public class Player : MonoBehaviour {
 		   (isJump == true && isHigh == true) ||
 		   (isSlide == true && isLow == true))
 		{
-			GetComponent<Animator>().SetBool ("DEAD", true);
+			GetComponent<Animator>().SetBool ("DAMAGED", true);
 			speed = 0;
 		}
 	}
